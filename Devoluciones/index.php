@@ -150,7 +150,9 @@ if ($term === '') {
 
 <?php
 // === Datos del usuario (si existe sesión) ===
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+  session_start();
+}
 $clarity_id   = $_SESSION['user_id']   ?? '';
 $clarity_name = $_SESSION['username']  ?? ($_SESSION['Email'] ?? '');
 $clarity_rol  = $_SESSION['Rol']       ?? 'Invitado';
@@ -564,3 +566,4 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
   </script>
 </body>
 </html>
+

@@ -5,8 +5,8 @@ declare(strict_types=1);
 $DB_HOST = '18.211.75.118';   // o 'localhost'
 $DB_PORT = 3306;          // si usas 3307 cámbialo aquí
 $DB_NAME = 'gpoascen_portal';
-$DB_USER = 'root';
-$DB_PASS = '04nm2fdLefCxM';
+$DB_USER = 'Portal_GA';
+$DB_PASS = 'laqueseawea123';
 
 function db(): PDO {
   global $DB_HOST, $DB_PORT, $DB_NAME, $DB_USER, $DB_PASS;

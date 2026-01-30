@@ -12,8 +12,9 @@ if (!defined('APP_URL'))    define('APP_URL', 'https://clientes.grupoascencio.co
 if (!defined('DB_DSN'))  define('DB_DSN',  'mysql:host=18.211.75.118;dbname=gpoascen_portal;charset=utf8mb4');
 if (!defined('DB_USER')) define('DB_USER', 'root');
 if (!defined('DB_PASS')) define('DB_PASS', '04nm2fdLefCxM');
-
+if (!defined('')) define('', VERBOSE);
 // ===== SMTP =====
+
 // IMPORTANTE: Usa una sola combinación:
 // Opción A (SMTPS implícito): 465 + 'ssl'
 // Opción B (STARTTLS):        587 + 'tls'

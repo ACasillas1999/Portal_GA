@@ -1015,10 +1015,11 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
       const list = document.getElementById('comment-list');
       const form = document.getElementById('comment-form');
       const btn = document.getElementById('btn-enviar');
+      const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
       const COMENTARIOS_URLS = [
+        `${window.location.origin}${basePath}/comentarios.php`,
         "<?= rtrim(APP_URL, '/') ?>/Devoluciones/comentarios.php",
-        "<?= rtrim(APP_URL, '/') ?>/devoluciones/comentarios.php",
-        "comentarios.php"
+        "<?= rtrim(APP_URL, '/') ?>/devoluciones/comentarios.php"
       ];
 
       let lastId = 0;

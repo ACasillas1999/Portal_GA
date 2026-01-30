@@ -9,9 +9,9 @@ if (!defined('SMTP_DEBUG')) define('SMTP_DEBUG', 2);
 if (!defined('APP_URL'))    define('APP_URL', 'https://clientes.grupoascencio.com.mx');
 
 // ===== BD (PDO) =====
-if (!defined('DB_DSN'))  define('DB_DSN',  'mysql:host=localhost;dbname=gpoascen_portal;charset=utf8mb4');
-if (!defined('DB_USER')) define('DB_USER', 'gpoascen_portal');
-if (!defined('DB_PASS')) define('DB_PASS', 'qJz}R2D[jK?r.a)u');
+if (!defined('DB_DSN'))  define('DB_DSN',  'mysql:host=18.211.75.118;dbname=gpoascen_portal;charset=utf8mb4');
+if (!defined('DB_USER')) define('DB_USER', 'root');
+if (!defined('DB_PASS')) define('DB_PASS', '04nm2fdLefCxM');
 
 // ===== SMTP =====
 // IMPORTANTE: Usa una sola combinación:

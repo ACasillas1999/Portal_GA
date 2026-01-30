@@ -102,7 +102,7 @@
                  
           </form>
 
-          <a href="#" id="forgot-link" class="forgot" style="font-size:1rem">¿Olvidaste tu contraseña?</a>
+         <!-- <a href="#" id="forgot-link" class="forgot" style="font-size:1rem">¿Olvidaste tu contraseña?</a>-->
         </div>
       </div>
     </div>

@@ -1,0 +1,488 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  width: 100% !important;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+
+/* ----- Ajustes base (fondo transparente) ----- */
+:root{
+  --ga-text-color: #ffffff;   /* cámbialo si tu fondo es claro */
+  --ga-maxw: 1100px;
+  --ga-gap: 1.25rem;
+   --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/*Title IMG Derecha*/
+.img-title{
+  display: flex;           /* Activa flexbox */
+  align-items: center;     /* Alinea verticalmente al centro */
+  justify-content: flex-start; 
+  align-items: center;
+  margin-left: 100px;
+  height: 100vh;
+  gap: 20px;
+}
+.imgTitle{
+  width: 60%;  
+  height: auto;
+}
+/**/
+
+/*Codigo Marcus (Favor de no juzgar, gracias)*/
+.grupo-logo{
+    width: 25%;
+    margin-bottom: 1%;
+        width: 25%;
+    margin-bottom: 1%;
+    display: block;
+    margin: 0 auto 16px auto;
+}
+
+.backRight {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background:url(assets/img/Fondo.Orange.Login.png);
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+}
+
+.backLeft {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: url(assets/img/FondoBlue.Login.webp);
+  background-size: cover;
+  background-position: center;
+  
+}
+
+#back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -999;
+  
+
+}
+
+.canvas-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+#slideBox {
+  width: 50%;
+  max-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-left: 50%;
+  position: absolute;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.topLayer {
+
+  width: 200%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  left: -100%;
+}
+
+label {
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
+
+input {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 1em;
+  padding: 8px 1px;
+  margin-top: 0.1em;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  left: 0;
+  position: absolute;
+  
+}
+.left label {
+  color: #000000;
+}
+.left input {
+  border-bottom: 1px solid #000000;
+  color: #ff8100;
+}
+.left input:focus,
+.left input:active {
+  border-color: #ed6b1f;
+  color: #000000;
+}
+.left input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #2c3034 inset;
+  -webkit-text-fill-color: #e3e3e3;
+}
+.left a {
+  color: #ed6b1f;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+}
+.right label {
+  color: #212121;
+}
+.right input {
+  border-bottom: 1px solid #212121;
+}
+.right input:focus,
+.right input:active {
+  border-color: #005aa3;
+}
+.right input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #f9f9f9 inset;
+  -webkit-text-fill-color: #212121;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.content h2 {
+  font-weight: 300;
+  font-size: 2.6em;
+  margin: 0.2em 0 0.1em;
+}
+
+.left .content h2 {
+  color: #ed6b1f;
+}
+
+.right .content h2 {
+  color: #01143d;
+}
+
+.form-element {
+  margin: 1.6em 0;
+}
+.form-element.form-submit {
+  margin: 1.6em 0 0;
+}
+
+.right .content .forgot {
+  margin-top: 1.6em;
+  color:darkgray;
+ 
+}
+
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  outline: none;
+  background-color: #e3e3e3;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+}
+
+.checkbox:focus,
+.checkbox:checked:focus,
+.checkbox:active,
+.checkbox:checked:active {
+  border-color: #ed6b1f;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox:checked {
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}
+
+.checkbox:checked:after {
+  outline: none;
+  content: "✓";
+  color: #ed6b1f;
+  font-size: 1.4em;
+  font-weight: 900;
+  position: absolute;
+  top: -4px;
+  left: 4px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+}
+.form-checkbox label {
+  margin: 0 6px 0;
+  font-size: 0.72em;
+}
+
+button {
+  padding: 0.8em 1.2em;
+  margin: 0 10px 0 0;
+  width: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1em;
+  color: #fff;
+  line-height: 1em;
+  letter-spacing: 0.6px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  transition: all 0.25s;
+  background: transparent;
+}
+button.signup {
+  color: white ;
+}
+button.login {
+  background: #01143d;
+}
+button.off {
+  background: none;
+  box-shadow: none;
+  margin: 0;
+}
+button.off.signup {
+  background-color: #ed6b1f;
+  color: white;
+}
+button.off.login {
+  color: #01143d;
+}
+
+button:focus,
+button:active,
+button:hover {
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+button:focus.signup,
+button:active.signup,
+button:hover.signup {
+  border: 1px solid #ed6b1f;
+  background: transparent;
+  color: white;
+}
+button:focus.login,
+button:active.login,
+button:hover.login {
+  border: 1px solid #01143e;;
+  background: transparent;
+  color: #01143e;
+}
+button:focus.off,
+button:active.off,
+button:hover.off {
+  box-shadow: none;
+}
+button:focus.off.signup,
+button:active.off.signup,
+button:hover.off.signup {
+   border: 2px solid #ed6b1f;
+  color: #ed6b1f;
+}
+button:focus.off.login,
+button:active.off.login,
+button:hover.off.login {
+  color: #01143e;
+  background: #e3e3e3;
+}
+/* ======= Vista Table ======= */
+
+@media (max-width: 1200px) and (min-width: 768px) {
+  .imgTitle{
+  display: none;
+}
+}
+
+/* ===== Vista Movil ===== */
+
+@media (max-width: 768px){
+
+    html, body{
+    
+    overflow-y:auto !important;
+  }
+
+  :root{ --stripeH: 56px; }  
+
+
+ .backRight { 
+    display: none !important;   /* oculta la naranja */
+  }
+ 
+  .backLeft, .backRight{
+    position: fixed;
+    left: 0; right: 0;
+    width: 100vw;
+    height: var(--stripeH);
+    background-size: cover;
+    background-position: center;
+    z-index: -1; 
+  }
+  .backLeft  { top: 0;                  background:#01143e; }
+  .backRight { top: var(--stripeH);     background:#ed6b1f; }
+
+  
+  .content{
+    width:92%;
+    max-width: 640px;
+    min-height:auto;
+    padding: 24px 0 24px;
+    margin:0 auto;
+    box-sizing:border-box;
+    overflow-y: auto;
+    overflow:visible;
+  }
+
+  .right .content .forgot {
+    margin: 10px auto auto auto;
+  }
+
+  
+  #slideBox{
+    position: relative;               
+    width: 100% !important;
+    margin: calc(var(--stripeH)*2 + 12px) 0 0 0 !important; 
+    left: 0; right: 0;
+  }
+
+  .grupo-logo{
+    align-content: center;
+    width: 50%;
+    margin-bottom: 1%;
+}
+
+
+ .backLeft,
+  .backRight{
+    display: none !important;
+  }
+
+  /* (Opcional) oculta el contenedor de fondo si solo tenía las franjas */
+  #back{
+    display: none !important;
+  }
+
+  /* Fondo limpio para toda la pantalla */
+ 
+
+  /* El contenedor principal ocupa todo, sin margen superior reservado para franjas */
+  #slideBox{
+    position: relative;
+    width: 100% !important;
+    min-height: 100dvh;            /* llena alto de la pantalla */
+    margin: 0 !important;          /* <- quita el margen que ponías por las franjas */
+    left: 0; right: 0;
+    box-shadow: none;              /* (opcional) sin sombra en móvil */
+  }
+
+  /* Contenido centrado y respirable */
+  .content{
+    width: 92%;
+    max-width: 640px;
+    min-height: auto;
+    padding: 24px 0 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Logo un poco más grande en móvil si quieres */
+  .grupo-logo{
+    width: 56%;
+    margin-bottom: 8px;
+  }
+
+   html, body{
+    height: 100%;
+    margin: 0;
+       overflow-y:auto !important;
+
+    background: #ffffff;           /* o usa tu imagen: background: url(assets/img/Fondo.RigntLogin.jpg) center/cover no-repeat fixed; */
+  }
+
+   #slideBox,
+  .left,
+  .right,
+  .content {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Más espacio al final para que los botones no se oculten tras el teclado/viewport */
+  .content{
+    padding-bottom: 96px !important;
+  }
+
+  /* El grupo de botones en columna y con separación */
+  .form-element.form-submit{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+  }
+
+  /* Botones a ancho completo en móvil */
+  .form-element.form-submit button{
+    width: 100% !important;
+  }
+
+  /* Mejora la visibilidad del botón secundario (Iniciar sesión) */
+  
+  /* Por si algún contenedor tenía sombra que “corta” el área clickeable */
+  #slideBox{ box-shadow: none !important; }
+
+   .grupo-logo{
+    display: block;
+    margin: 0 auto 16px auto; /* centrado horizontal y un poco de espacio abajo */
+    width: 56%;              /* puedes ajustar (ej. 40% si lo quieres más chico) */
+    max-width: 240px;        /* límite para pantallas grandes */
+  }
+}
+

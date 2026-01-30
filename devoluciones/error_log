@@ -1,0 +1,24 @@
+[23-Oct-2025 17:11:14 America/Mexico_City] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Devoluciones/index.php(11): require_once('/home/gpoascen/...')
+#2 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[24-Oct-2025 17:13:07 America/Mexico_City] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Devoluciones/index.php(9): require_once('/home/gpoascen/...')
+#2 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[24-Oct-2025 17:13:07 America/Mexico_City] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Devoluciones/index.php(9): require_once('/home/gpoascen/...')
+#2 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[24-Oct-2025 17:13:07 America/Mexico_City] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Devoluciones/index.php(9): require_once('/home/gpoascen/...')
+#2 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11

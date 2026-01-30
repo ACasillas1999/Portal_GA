@@ -1,0 +1,49 @@
+[21-Oct-2025 18:29:47 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/clientes.grupoascencio.com.mx/app/db.php:12
+Stack trace:
+#0 /home/gpoascen/clientes.grupoascencio.com.mx/app/db.php(12): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', 'V*^kYdHwofG{', Array)
+#1 /home/gpoascen/clientes.grupoascencio.com.mx/guards/force_password_change.php(19): require_once('/home/gpoascen/...')
+#2 /home/gpoascen/clientes.grupoascencio.com.mx/Inicio/index.php(13): require_once('/home/gpoascen/...')
+#3 {main}
+  thrown in /home/gpoascen/clientes.grupoascencio.com.mx/app/db.php on line 12
+[23-Oct-2025 17:15:57 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/guards/force_password_change.php(19): require_once('/home/gpoascen/...')
+#2 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Inicio/index.php(13): require_once('/home/gpoascen/...')
+#3 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[23-Oct-2025 17:16:35 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/guards/force_password_change.php(19): require_once('/home/gpoascen/...')
+#2 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Inicio/index.php(13): require_once('/home/gpoascen/...')
+#3 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[23-Oct-2025 17:16:43 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/guards/force_password_change.php(19): require_once('/home/gpoascen/...')
+#2 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Inicio/index.php(13): require_once('/home/gpoascen/...')
+#3 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[23-Oct-2025 17:16:53 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/guards/force_password_change.php(19): require_once('/home/gpoascen/...')
+#2 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Inicio/index.php(13): require_once('/home/gpoascen/...')
+#3 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[27-Oct-2025 16:45:47 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/guards/force_password_change.php(19): require_once('/home/gpoascen/...')
+#2 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Inicio/index.php(13): require_once('/home/gpoascen/...')
+#3 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11
+[27-Oct-2025 16:45:48 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php:11
+Stack trace:
+#0 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php(11): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', Object(SensitiveParameterValue), Array)
+#1 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/guards/force_password_change.php(19): require_once('/home/gpoascen/...')
+#2 /home/gpoascen/public_html/clientes.grupoascencio.com.mx/Inicio/index.php(13): require_once('/home/gpoascen/...')
+#3 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/app/db.php on line 11

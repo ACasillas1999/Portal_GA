@@ -1,0 +1,6 @@
+[21-Oct-2025 12:29:46 America/Mexico_City] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [2002] Connection refused in /home/gpoascen/clientes.grupoascencio.com.mx/app/db.php:12
+Stack trace:
+#0 /home/gpoascen/clientes.grupoascencio.com.mx/app/db.php(12): PDO->__construct('mysql:host=loca...', 'gpoascen_portal', 'V*^kYdHwofG{', Array)
+#1 /home/gpoascen/clientes.grupoascencio.com.mx/protocolos/index.php(18): require_once('/home/gpoascen/...')
+#2 {main}
+  thrown in /home/gpoascen/clientes.grupoascencio.com.mx/app/db.php on line 12

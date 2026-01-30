@@ -1,0 +1,683 @@
+:root {
+  --ga-blue: #ed6b1f;
+  --ga-blue-600: #0b5fa3;
+  --ga-orange: #ed6c24;
+  --ink: #1f2937;
+  --muted: #88888a;
+  --line: #e5e7eb;
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --radius: 18px;
+  --shadow: 0 12px 32px rgba(2, 12, 32, 0.1);
+  --container: 1200px;
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+* {
+  font-family: var(--font-sans) !important;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+
+  color: var(--ink);
+  background: var(--bg);
+}
+.container {
+  width: min(calc(100% - 40px), var(--container));
+  margin-inline: auto;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 28px 28px 28px;
+  margin: 28px auto;
+  overflow: hidden;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.iconSize {
+  width: 100%;
+  height: 100%;
+}
+.title-row .logo-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  flex: 0 0 auto;
+}
+.tc-devolucion {
+  font-family: var(--font-sans);
+  color: var(--muted);
+}
+.bntregresar {
+  margin-left: auto;
+}
+h1 {
+  margin: 0;
+  /*font-size:clamp(32px,4vw,48px);*/
+  font-size: 48px;
+  color: var(--ga-blue);
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+.lead {
+  max-width: 720px;
+  margin: 6px 0 14px;
+  font-size: clamp(16px, 1.7vw, 20px);
+  color: #4b5563;
+}
+
+/*Pruebas*/
+
+.search-box {
+  position: relative;
+  display: block; /* evita que el layout flex mueva al icono */
+  width: max-content; /* se ajusta al ancho del input */
+}
+
+/* El icono siempre dentro, pegado a la izquierda */
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* no bloquea clics en el input */
+}
+
+/* Si usas <span class="search-icon"><img …></span> */
+.search-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* El input deja espacio al icono */
+.search-input {
+  padding: 10px 12px 10px 40px; /* 40px = 20 del icono + margen */
+  width: 360px; /* o el ancho que uses en desktop */
+  box-sizing: border-box;
+}
+
+/*FinPruebas*/
+
+.titulohistoria input[type="search"] {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  /*padding:10px 12px;*/
+  font-family: var(--font-sans);
+  font-weight: 500;
+  min-width: 300px;
+  margin-left: auto;
+  padding: 10px 12px 10px 40px;
+}
+
+.Prueba {
+  width: 100%;
+}
+
+.search-box {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 12px; /* separación izquierda */
+  top: 50%;
+  width: 20px; /* tamaño de tu icono */
+  height: 20px;
+  transform: translateY(-50%);
+  pointer-events: none; /* para no bloquear clics */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.titulohistoria {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--ga-blue);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  padding: 14px 20px;
+  border-radius: 3px !important;
+  letter-spacing: 0.3px;
+  transition: transform 0.15s ease, background 0.15s ease;
+  border: none;
+}
+.btn:hover {
+  background: var(--ga-blue-600);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Marca de agua caja grande */
+.hero svg.watermark {
+  position: absolute;
+  right: 20px;
+  bottom: -6px;
+  width: min(32vw, 420px);
+  height: auto;
+  opacity: 0.1;
+  stroke: #0b1b2a;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ===== PANEL HISTORIAL ===== */
+.panel {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 28px auto;
+  /*margin: 0 auto 48px;*/
+  /*padding: 18px 0 8px;*/
+  padding: 28px 28px 28px 28px;
+}
+.panel h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0px 20px 4px 0px;
+}
+.table-wrap {
+  overflow-x: auto; /*padding: 6px 8px 20px;*/
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+thead th {
+  text-align: left;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+tbody td {
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 6px;
+}
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+.folio {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+.date {
+  color: #374151;
+}
+.actions {
+  text-align: left;
+}
+.actionstwo {
+  text-align: center;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #374151;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #ddd;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.04) inset;
+}
+.proceso .dot {
+  background: #facc15;
+} /* amarillo */
+.aprobado .dot {
+  background: #22c55e;
+} /* verde */
+.rechazado .dot {
+  background: #ef4444;
+} /* rojo  */
+
+.btn-sm {
+  background: var(--muted);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.btn-sm:hover {
+  background: var(--ga-blue-600);
+}
+
+@media (max-width: 863px) {
+  .bntregresar {
+    margin: auto;
+  }
+  .toolbar {
+    margin: auto;
+  }
+
+  .titulohistoria {
+    /*margin: auto;*/
+    display: flex;
+    overflow: auto;
+    justify-content: center !important;
+    align-items: center;
+  }
+  .titulohistoria .search-box {
+    margin-left: 0 !important; /* anula el empuje a la derecha */
+    flex: 1 1 100%; /* que tome toda la línea en móvil */
+    display: flex; /* para centrar su contenido */
+    justify-content: center;
+  }
+
+  .titulohistoria input[type="search"] {
+    margin-left: 0 !important; /* anula el empuje a la derecha */
+    min-width: 0; /* anula el min-width:300px de escritorio */
+    width: min(100%, 420px); /* ancho fluido y tope agradable */
+    display: block; /* para que el margin auto funcione si lo usas */
+  }
+
+  .titulohistoria {
+    justify-content: center;
+  }
+  .search-box {
+    width: min(100%, 420px);
+  }
+  .search-input {
+    width: 100%;
+    min-width: 0;
+  }
+  .search-icon {
+    left: 95px;
+  }
+
+  .titulohistoria .search-box {
+    display: block !important; /* no inline-block */
+    position: relative; /* referente del icono */
+    margin: 0 auto !important; /* quita margin-left:auto */
+    max-width: 420px; /* tope cómodo */
+    width: 100%; /* que ocupe el ancho disponible */
+  }
+
+  /* El input ya no debe forzar 300px ni empujarse */
+  .titulohistoria input[type="search"] {
+    min-width: 0 !important; /* anula min-width:300px */
+    width: 100% !important; /* ocupa el wrapper */
+    margin-left: 0 !important; /* quita el auto */
+    padding-left: 40px; /* deja espacio al icono */
+    box-sizing: border-box;
+  }
+
+  /* Asegura el anclaje del icono dentro del wrapper */
+  .titulohistoria .search-box .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  h1 {
+    font-size: 36px;
+    margin: auto;
+  }
+
+
+  .hero {
+    padding: 22px;
+  }
+  .title-row .logo-box {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+  }
+  .panel h2 {
+    font-size: 26px;
+  }
+  
+
+  .titulohistoria {
+    justify-content: center; /* si es flex, lo centrará */
+  }
+
+  /* La caja del buscador se centra y se adapta */
+  .search-box {
+    margin-inline: auto; /* centra el bloque */
+    width: min(100%, 420px); /* ancho fluido con tope cómodo */
+  }
+
+  /* El input ocupa toda la caja y mantiene padding para el icono */
+  .search-input {
+    width: 100%;
+    min-width: 0; /* evita que el min-width de desktop lo desborde */
+    padding-left: 40px; /* sigue dejando espacio al icono */
+  }
+}
+
+/*MODAL*/
+
+.modal[hidden] {
+  display: none;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+}
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 12, 32, 0.55);
+}
+.modal__dialog {
+  position: relative;
+  margin: clamp(12px, 4vh, 36px) auto;
+  max-width: 860px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  width: min(92vw, 860px);
+  overflow: hidden;
+}
+.modal__hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.modal__hd h3 {
+  margin: 0;
+  color: var(--ga-orange);
+  font-family: var(--font-sans) !important;
+}
+.modal__close {
+  border: 0;
+  background: transparent;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.modal__close:hover {
+  opacity: 1;
+}
+.modal__body {
+  padding: 18px 22px;
+}
+.modal__ft {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 14px 22px;
+  border-top: 1px solid #e5e7eb;
+  grid-column: 1 / -1;
+}
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.fld {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fld--full {
+  grid-column: 1/-1;
+}
+.fld input,
+.fld textarea {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 12px;
+  font-family: var(--font-sans) !important;
+}
+
+.sucursal-style {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 12px;
+  color: var(--muted);
+  font-family: var(--font-sans) !important;
+}
+
+.fld span {
+  color: #4b5563;
+}
+.note {
+  margin-top: 6px;
+  color: #6b7280;
+}
+
+.btn-sec {
+  background: #f3f4f6;
+  color: #111827;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+   .btnEnviar{
+    margin: 0 !important;
+  }
+
+  .modal{
+    overflow-y: auto !important;
+  }
+
+  .modal__backdrop{
+   background: transparent;
+  }
+
+  .modal__ft {
+    justify-content: center;
+  }
+
+  .table-wrap table {
+    min-width: initial; /* tu tabla tenía min-width: 860px; */
+    border-collapse: separate; /* evita colisiones raras al hacer block */
+  }
+  .table-wrap thead {
+    display: none;
+  }
+
+  /* 2.2 Cada fila -> tarjeta */
+  .table-wrap tbody,
+  .table-wrap tr,
+  .table-wrap td {
+    display: block;
+    width: 100%;
+  }
+  .table-wrap tr {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    /*box-shadow: var(--shadow);*/
+    padding: 12px 14px; /* espacio interno de la tarjeta */
+    margin: 12px 0; /* separación entre tarjetas */
+  }
+
+  /* 2.3 Cada celda con su etiqueta encima */
+  .table-wrap td {
+    border: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .table-wrap td:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* 2.4 Etiqueta (nombre de la columna) */
+  .table-wrap td::before {
+    /*content: attr(data-label);*/
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  /* 2.5 Ajustes útiles de tus clases */
+  .table-wrap .actions,
+  .table-wrap .actionstwo {
+    text-align: left; /* mejor en tarjetas */
+    margin-top: 6px;
+  }
+
+  .table-wrap .btn-sm {
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: 6px;
+  }
+}
+/* Mantén el comportamiento en escritorio */
+@media (min-width: 721px) {
+  tbody tr:last-child td {
+    border-bottom: 0;
+  } /* tu regla original */
+}
+
+/* ===== Móvil: que la última tarjeta NO pierda las líneas ===== */
+@media (max-width: 720px) {
+  /* vuelve a poner líneas en la última fila/tarjeta */
+  .table-wrap tbody tr:last-child td {
+    border-bottom: 1px solid var(--line);
+  }
+  /* excepto en el último campo de esa tarjeta */
+  .table-wrap tbody tr:last-child td:last-child {
+    border-bottom: 0;
+  }
+
+  #tabla {
+    background-color: white !important;
+  }
+}
+
+/* Contenedor del buscador */
+.search-box {
+  position: relative;
+  display: inline-block; /* ancho = al contenido */
+  width: fit-content;
+}
+
+/* Lupa dentro del input */
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  opacity: 0.65;
+}
+.search-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Input con espacio para la lupa */
+.search-input {
+  height: 44px;
+  padding: 10px 12px 10px 40px; /* espacio para la lupa */
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+/* IMPORTANTE: quita el empuje que lo desalineaba */
+.titulohistoria input[type="search"] {
+  margin-left: 0 !important; /* antes: auto */
+}
+
+/* Alineación en la fila del título */
+.titulohistoria {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .titulohistoria {
+    justify-content: center;
+  }
+  .search-box {
+    width: min(100%, 420px);
+  }
+  .search-input {
+    width: 100%;
+    min-width: 0;
+  }
+}

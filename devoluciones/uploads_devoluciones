@@ -1,0 +1,16 @@
+# Devoluciones/uploads_devoluciones/.htaccess
+RemoveHandler .php .phtml .php3 .php4 .php5 .phar .cgi .pl .py .sh .exe .bat .cmd .com
+RemoveType    .php .phtml .php3 .php4 .php5 .phar .cgi .pl .py .sh .exe .bat .cmd .com
+
+# 🔒 No listar archivos
+Options -ExecCGI -Indexes
+
+# 🚫 Bloquea SVG (pueden contener JS)
+<FilesMatch "\.svg$">
+  Deny from all
+</FilesMatch>
+
+# 🔐 No permitir leer el propio .htaccess
+<Files ".htaccess">
+  Require all denied
+</Files>

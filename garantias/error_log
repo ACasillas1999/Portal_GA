@@ -1,0 +1,8 @@
+[25-Oct-2025 15:00:18 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "EALL" in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/garantias/guardar_garantia.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/garantias/guardar_garantia.php on line 5
+[25-Oct-2025 15:02:43 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "EALL" in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/garantias/guardar_garantia.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/gpoascen/public_html/clientes.grupoascencio.com.mx/garantias/guardar_garantia.php on line 5

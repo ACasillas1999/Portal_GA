@@ -821,7 +821,9 @@ $isLocked = in_array((int)$dev['estatus'], $LOCK_STATUSES, true);
 
 <?php
 // === Datos del usuario (si existe sesión) ===
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {
+  session_start();
+}
 $clarity_id   = $_SESSION['user_id']   ?? '';
 $clarity_name = $_SESSION['username']  ?? ($_SESSION['Email'] ?? '');
 $clarity_rol  = $_SESSION['Rol']       ?? 'Invitado';

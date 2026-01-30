@@ -495,6 +495,10 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
   const selSucursal  = document.getElementById('selSucursal');
   const wrapVendedor = document.getElementById('wrapVendedor');
   const selVendedor  = document.getElementById('selVendedor');
+  const API_VENDEDORES_URLS = [
+    "<?= rtrim(APP_URL, '/') ?>/Devoluciones/api_vendedores.php",
+    "<?= rtrim(APP_URL, '/') ?>/devoluciones/api_vendedores.php"
+  ];
 
   function fillSelect(select, items, placeholder='Selecciona…') {
     select.innerHTML = '';
@@ -516,8 +520,21 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
     if (!suc) return;
 
     try {
-      const r = await fetch(`./api_vendedores.php?sucursal=${encodeURIComponent(suc)}`, { credentials: 'same-origin' });
-      const j = await r.json();
+      let j = null;
+      let lastErr = null;
+      for (const base of API_VENDEDORES_URLS) {
+        const url = `${base}?sucursal=${encodeURIComponent(suc)}`;
+        const r = await fetch(url, { credentials: 'same-origin' });
+        const ct = r.headers.get('content-type') || '';
+        if (!r.ok || !ct.includes('application/json')) {
+          lastErr = new Error(`HTTP ${r.status}`);
+          continue;
+        }
+        j = await r.json();
+        break;
+      }
+      if (!j) throw lastErr || new Error('No response');
+
       if (j.ok && Array.isArray(j.data) && j.data.length) {
         fillSelect(selVendedor, j.data, 'Selecciona un vendedor…');
         wrapVendedor.style.display = '';

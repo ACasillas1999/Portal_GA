@@ -508,7 +508,9 @@ if (inpAdjG) {
       return;
     }
     try {
-      const r = await fetch(`./api_vendedores.php?sucursal=${encodeURIComponent(suc)}`, { credentials:'same-origin' });
+      // Usa ruta absoluta basada en la ubicación actual para evitar problemas con directorios duplicados
+      const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+      const r = await fetch(`${basePath}/api_vendedores.php?sucursal=${encodeURIComponent(suc)}`, { credentials:'same-origin' });
       const j = await r.json();
       if (j.ok && Array.isArray(j.data) && j.data.length) {
         fillSelect(selVendedor, j.data, 'Selecciona un vendedor…');

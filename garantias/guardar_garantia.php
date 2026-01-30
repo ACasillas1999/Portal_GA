@@ -136,10 +136,29 @@ try{
   $folio = sprintf('GAR-%s-%06d', date('Y'), $id);
   $pdo->prepare("UPDATE garantia_solicitudes SET folio=? WHERE id=?")->execute([$folio,$id]);
 
-  // Adjuntos (igual que antes)
+  // Adjuntos con mejor manejo de errores
   if (!empty($_FILES['adjuntos']['name'][0])) {
     $baseDir = __DIR__ . '/uploads/' . date('Y/m');
-    if (!is_dir($baseDir)) @mkdir($baseDir, 0775, true);
+    
+    // Intenta crear el directorio si no existe
+    if (!is_dir($baseDir)) {
+      $created = @mkdir($baseDir, 0775, true);
+      if (!$created) {
+        throw new RuntimeException(
+          'No se pudo crear el directorio de uploads. ' .
+          'Contacta al administrador para verificar permisos en: ' . $baseDir
+        );
+      }
+    }
+    
+    // Verifica que el directorio sea escribible
+    if (!is_writable($baseDir)) {
+      throw new RuntimeException(
+        'El directorio de uploads no tiene permisos de escritura. ' .
+        'Contacta al administrador: ' . $baseDir
+      );
+    }
+    
     $okExt = ['jpg','jpeg','png','gif','webp','mp4','mov','avi','mkv','webm','pdf','zip'];
     $f = $_FILES['adjuntos'];
     for ($i=0; $i<count($f['name']); $i++){
@@ -182,16 +201,24 @@ try{
         ]];
 
         wa_send_template($e164, $plantilla, $componentes, $idioma);
-        file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." $folio->$e164 [$nombre]\n", FILE_APPEND);
+        try {
+          @file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." $folio->$e164 [$nombre]\n", FILE_APPEND);
+        } catch (Throwable $logErr) { /* log silently fails */ }
       } else {
-        file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." $folio: vendedor sin teléfono válido\n", FILE_APPEND);
+        try {
+          @file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." $folio: vendedor sin teléfono válido\n", FILE_APPEND);
+        } catch (Throwable $logErr) { /* log silently fails */ }
       }
     } else {
       // No hay vendedor seleccionado (o no aplica) → no se envía a nadie
-      file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." $folio: sin vendedor; no se envía WA\n", FILE_APPEND);
+      try {
+        @file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." $folio: sin vendedor; no se envía WA\n", FILE_APPEND);
+      } catch (Throwable $logErr) { /* log silently fails */ }
     }
   } catch (Throwable $e) {
-    file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." ERROR $folio: ".$e->getMessage()."\n", FILE_APPEND);
+    try {
+      @file_put_contents(__DIR__.'/wa_new_garantia.log', date('c')." ERROR $folio: ".$e->getMessage()."\n", FILE_APPEND);
+    } catch (Throwable $logErr) { /* log silently fails */ }
   }
 
   // Respuesta final al cliente

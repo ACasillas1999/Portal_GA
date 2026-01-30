@@ -186,7 +186,7 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
           </div>
           <h1 id="devoluciones-title">DEVOLUCIONES</h1>
           <h2 class="bntregresar">
-            <a class="btn-sm" href="<?= defined('APP_URL') ? h(APP_URL) . '/inicio' : '/portal' ?>">VOLVER AL PORTAL</a>
+            <a class="btn-sm" href="<?= defined('APP_URL') ? h(APP_URL) . '/Inicio' : '/portal' ?>">VOLVER AL PORTAL</a>
           </h2>
         </div>
 

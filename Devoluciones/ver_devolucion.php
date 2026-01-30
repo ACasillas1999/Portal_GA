@@ -1015,6 +1015,11 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
       const list = document.getElementById('comment-list');
       const form = document.getElementById('comment-form');
       const btn = document.getElementById('btn-enviar');
+      const COMENTARIOS_URLS = [
+        "<?= rtrim(APP_URL, '/') ?>/Devoluciones/comentarios.php",
+        "<?= rtrim(APP_URL, '/') ?>/devoluciones/comentarios.php",
+        "comentarios.php"
+      ];
 
       let lastId = 0;
       let stop = false; // por si quieres pausar con visibilitychange
@@ -1064,13 +1069,25 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
         return el;
       }
 
+      async function fetchComentarios(query = '', options = {}) {
+        let lastErr = null;
+        for (const base of COMENTARIOS_URLS) {
+          const url = query ? `${base}${base.includes('?') ? '&' : '?'}${query}` : base;
+          const r = await fetch(url, { credentials: 'same-origin', ...options });
+          const ct = r.headers.get('content-type') || '';
+          if (!r.ok || !ct.includes('application/json')) {
+            lastErr = new Error(`HTTP ${r.status}`);
+            continue;
+          }
+          return await r.json();
+        }
+        throw lastErr || new Error('No response');
+      }
+
       async function initialLoad() {
         list.innerHTML = '<div class="comment-empty">Cargando comentarios…</div>';
         try {
-          const r = await fetch(`comentarios.php?id_devolucion=${encodeURIComponent(DEV.id)}`, {
-            credentials: 'same-origin'
-          });
-          const d = await r.json();
+          const d = await fetchComentarios(`id_devolucion=${encodeURIComponent(DEV.id)}`);
           if (!d.ok) {
             throw new Error(d.error || 'ERROR');
           }
@@ -1104,10 +1121,7 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
             after_id: String(lastId || 0),
             timeout: '20' // espera hasta 20s si no hay nuevos
           });
-          const r = await fetch(`comentarios.php?${params.toString()}`, {
-            credentials: 'same-origin'
-          });
-          const d = await r.json();
+          const d = await fetchComentarios(params.toString());
 
           if (d?.ok) {
             // si hay nuevos, se insertan
@@ -1149,12 +1163,10 @@ $clarity_suc  = $_SESSION['Sucursal']  ?? '';
         btn.textContent = 'Publicando…';
 
         try {
-          const r = await fetch('comentarios.php', {
+          const d = await fetchComentarios('', {
             method: 'POST',
-            body: fd,
-            credentials: 'same-origin'
+            body: fd
           });
-          const d = await r.json();
           if (!d.ok) throw new Error(d.error || 'ERROR');
 
           if (list.querySelector('.comment-empty')) list.innerHTML = '';

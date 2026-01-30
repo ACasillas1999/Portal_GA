@@ -122,7 +122,6 @@ body.bg-ready::before{ opacity: 1; }
 
 <?php
 // === Datos del usuario (si existe sesión) ===
-session_start();
 $clarity_id   = $_SESSION['user_id']   ?? '';
 $clarity_name = $_SESSION['username']  ?? ($_SESSION['Email'] ?? '');
 $clarity_rol  = $_SESSION['Rol']       ?? 'Invitado';

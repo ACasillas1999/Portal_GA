@@ -2,11 +2,11 @@
 // Conexiones/Conexion.php  (versión PDO)
 declare(strict_types=1);
 
-$DB_HOST = '127.0.0.1';   // o 'localhost'
+$DB_HOST = '18.211.75.118';   // o 'localhost'
 $DB_PORT = 3306;          // si usas 3307 cámbialo aquí
-$DB_NAME = 'portal_ga';
+$DB_NAME = 'gpoascen_portal';
 $DB_USER = 'root';
-$DB_PASS = '';
+$DB_PASS = '04nm2fdLefCxM';
 
 function db(): PDO {
   global $DB_HOST, $DB_PORT, $DB_NAME, $DB_USER, $DB_PASS;
